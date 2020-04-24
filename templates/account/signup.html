@@ -4,14 +4,20 @@
 <h3>Sign Up</h3>
 
 <p class="text-secondary">Already have an account? Then please <a href="{{ login_url }}">sign in</a>.</p>
-
+<div class="row">
+  <div class="col-sm-6">
+           <img class="" src="https://imgur.com/UrO7JYv.png" style="width:400px">
+  </div>
+  <div class="col-sm-6">
 <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
   {% csrf_token %}
   {{ form.as_p }}
   {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+  <input type="hidden"  class="form-control" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
-  <button type="submit" class="btn btn-primary">Sign Up</button>
+  <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
 </form>
+  </div>
+</div>
 
 {% endblock %}
